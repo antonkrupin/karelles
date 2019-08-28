@@ -1,0 +1,356 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>Материалы дистанционного зондирования</title>
+</head>
+<body>
+    <div class="main">
+        <div class="first_block">
+            <img class="first_block__background" src="{% static 'img/fb_bg.png' %}" alt="">
+            <div class="first_block__contacts">
+              {% for contact in contacts %}
+                <h3>{{ contact.email }}</h3>
+                <h3>{{ contact.phone }}</h3>
+              {% endfor %}
+            </div>
+            <div class="first_block__title">
+                <h1>МАТЕРИАЛЫ ДИСТАНЦИОННОГО ЗОНДИРОВАНИЯ</h1><br>
+                <h1 class="yellow_title">УЧАСТКОВ ИСПОЛЬЗОВАНИЯ И ВОСПРОИЗВОДСТВА ЛЕСОВ (ЛЕСОСЕКИ)</h1>
+            </div>
+            <div class="first_block__main">
+                <div class="first_block__bullets">
+                    <div class="first_block__bullet">
+                        <img src="{% static 'img/checkbox.png' %}" alt="">
+                        <h3>от 20 минут на один участок (лесосеку)*</h3>
+                    </div>
+                    <div class="first_block__bullet">
+                        <img src="{% static 'img/checkbox.png' %}" alt="">
+                        <h3>снимок участка (лесосеки) полностью соответствует<br>
+                            требованиям действующего законодательства РФ
+                            </h3>
+                    </div>
+                    <div class="first_block__bullet">
+                        <img src="{% static 'img/checkbox.png' %}" alt="">
+                        <h3>формат снимка участка (лесосеки) – JPEG,<br> объем –до 10 Мб</h3>
+                    </div>
+                    <div class="first_block__bullet">
+                        <img src="{% static 'img/checkbox.png' %}" alt="">
+                        <h3>работаем по всей России**</h3>
+                    </div>
+                    <div class="first_block__bullet">
+                        <h5>* при наличии космической съёмки удовлетворительного качества <br>и предоставления всех необходимых данных для составления снимка участка леса</h3>
+                    </div>
+                    <div class="first_block__bullet">
+                        <h5>** при наличии у нас или Заказчика первичных материалов последнего лесоустройства<br> (лесоустраительных планшетов, квартальной сети и т.д.) в электронном виде (JPEG, shp, tab и др)</h3>
+                    </div>
+                </div>
+                <div class="first_block__bullets-img">
+                    <img src="{% static 'img/fb_img1.png' %}" alt="">
+                </div>
+            </div>
+            <div class="block__button">
+                <button class="button">
+                    <svg class="button_svg">
+                        <rect class="button_rect">
+
+                        </rect>
+                    </svg>
+                    <!--<h3 class="button_text">заказать дистанционное зондирование</h3>-->
+                    заказать дистанционное зондирование
+                </button>
+            </div>
+        </div>
+        <div class="second_block">
+            <h2 class="block__title">Стоимость работ:</h2>
+            <div class="second_block__pricing">
+                <div class="price">
+                    {% for price in prices_300 %}
+                    <h3 class="price_title">от {{ price.price }} рублей<br>
+                            за участок (лесосеку)</h3>
+                    {% endfor %}
+                    <h3 class="price_subtitle">при заказе <span>до 300</span> штук<br>
+                            материалов ДЗ</h3>
+                </div>
+                <div class="price">
+                  {% for price in prices_301 %}
+                    <h3 class="price_title">от {{ price.price }} рублей<br>
+                            за участок (лесосеку)</h3>
+                  {% endfor %}
+                    <h3 class="price_subtitle">при заказе <span>от 301</span> штуки<br>
+                            материалов ДЗ</h3>
+                </div>
+                <div class="price">
+                  {% for price in prices_citizen %}
+                    <h3 class="price_title">от {{ price.price }} рублей<br>
+                            за участок (лесосеку)</h3>
+                  {% endfor %}
+                    <h3 class="price_subtitle">для граждан,<br>
+                            осуществляющих<br>
+                            заготовку древесины<br>
+                            для собственных нужд*<br></h3>
+                    <h4 class="price_addition">*не более 3-х участков от одного гражданина</h4>
+                </div>
+            </div>
+        </div>
+        <div class="third_block">
+            <img src="{% static 'img/img4.png' %}" alt="">
+            <h2 class="block__title">Материалы дистанционного зондирования (материалы ДЗ)<br>
+                    участков использования и воспроизводства лесов (лесосеки) нужны:</h2>
+            <h3 class="main_text">
+                    — Юридическому или физическому лицу, осуществляющему использование лесов<br> и предоставляющему в соответствии со <span>ст. 49 ЛК РФ «Отчет об использовании лесов»</span>
+            </h3>
+            <h3 class="main_text">
+                    — Юридическому или физическому лицу, осуществляющему воспроизводство лесов<br> и лесоразведение, предоставляющему в соответствии со <br><span>ст. 66 ЛК РФ «Отчет о воспроизводстве лесов и лесоразведении»</span><br>
+            </h3>
+            <h3 class="third_block__subtitle">Когда необходимо сдавать материалы ДЗ участков (лесосек)?:</h3>
+            <h3 class="main_text">
+                    Обязательным приложением к отчетам 1-ИЛ, 1-ВЛ является графическая часть,<br>
+                    которая может формироваться с применением космических снимков.<br>
+                    Материалы дистанционного зондирования прилагаются однократно к годовым отчетам<br>
+                    для определения местоположения и площади лесосеки при использовании лесов.<br>
+                    Давность материалов дистанционного зондирования должна составлять<br>
+                    не более трех месяцев до момента предоставления отчета.<br>
+            </h3>
+        </div>
+        <div class="fourth_block">
+            <h2 class="block__title">Заказывая материалы ДЗ у нас, вы получаете:</h2>
+            <div class="fourth_block__bullets">
+                <div class="bullet">
+                    <img src="{% static 'img/checkbox.png' %}" alt="">
+                    <h3>Снимок участка использования или воспроизводства лесов (лесосеки)<br> в формате JPEG объемом до 10 Мб, который полностью<br>
+                        соответствует требованиям действующего законодательства<br>
+                        (Приказ Минприроды РФ от 21.08.2017 №451 и №452)</h3>
+                </div>
+                <div class="bullet">
+                    <img src="{% static 'img/checkbox.png' %}" alt="">
+                    <h3>Наглядное изображение участка использования или воспроизводства лесов (лесосеки)<br> с отображением границ лесных кварталов
+                        и фактических границ лесосеки в масштабе кратном 1:5 000 м</h3>
+                </div>
+                <div class="bullet">
+                    <img src="{% static 'img/checkbox.png' %}" alt="">
+                    <h3>Пространственное разрешение применимых космических снимков не хуже 15м</h3>
+                </div>
+                <div class="bullet">
+                    <img src="{% static 'img/checkbox.png' %}" alt="">
+                    <h3>Вектора вырубленных участков в формате shp<br>
+                        с атрибутивной информацией в проекции WGS84 (при необходимости)</h3>
+                </div>
+                <div class="bullet">
+                    <img src="{% static 'img/checkbox.png' %}" alt="">
+                    <h3>Полноту и качество выполненных работ</h3>
+                </div>
+            </div>
+            <h3 class="fourth_block__subtitle">
+                Примеры оформления графической части отчетов 1-ИЛ, 1-ВЛ<br>
+                (материалы дз лесосек)*
+            </h3>
+            <div class="fourth_block__img">
+                <div class="img">
+                    <img src="{% static 'img/examples/1.jpg' %}" alt="">
+                    <h3>Материалы ДЗ<br>
+                        к отчету 1-ИЛ<br>
+                        для арендаторов лесных участков
+                        </h3>
+                </div>
+                <div class="img">
+                    <img src="{% static 'img/examples/2.jpg' %}" alt="">
+                    <h3>Материалы ДЗ<br>
+                        к отчету 1-ВЛ<br>
+                        для арендаторов лесных участков
+                        </h3>
+                </div>
+                <div class="img">
+                    <img src="{% static 'img/examples/3.jpg' %}" alt="">
+                    <h3>Материалы ДЗ<br>
+                        к отчету 1-ИЛ для граждан<br>
+                        (заготовка древесины<br>
+                        для собственных нужд)
+                        </h3>
+                </div>
+                <div class="examples_big">
+                    <div class="examples_big__img">
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="fourth_block__append">
+                * При необходимости можно дополнить графическое изображение гидрографической сетью, границей защитных лесов и другим элементами и подписями на усмотрение Заказчика
+            </div>
+            <div class="block__button">
+                <button class="button">
+                    <svg class="button_svg">
+                        <rect class="button_rect">
+
+                        </rect>
+                    </svg>
+                    <!--<h3 class="button_text">заказать дистанционное зондирование</h3>-->
+                    заказать дистанционное зондирование
+                </button>
+            </div>
+        </div>
+        <div class="fifth_block">
+            <h2 class="block__title">Для составления материалов ДЗ необходимо предоставить:</h2>
+            <img src="{% static 'img/img5.png' %}" alt="">
+            <div class="fifth_block-main">
+                <h3 class="title">Для юридических лиц (в т.ч. Индивидуальных предпринимателей),<br>
+                    осуществляющих деятельность <span>на арендованных лесных участках:</span></h3>
+                <h3 class="main_text">
+                    1. Копии Лесных деклараций за отчетный период (1 лист, Приложение 1 к Лесной декларации)<br>
+                    с указанием времени окончания заготовки древесины<br>
+                    (при неоконченной рубке/не полностью вырубленной лесосеке на отчетную дату указываются<br>
+                    площадь и объем заготовленной древесины)<br>
+                </h3>
+                <h3 class="main_text">
+                    2. Копии материалов отвода лесных участков (лесосек) с промерами и углами<br>
+                    (в т.ч. на неэксплуатационные площади) - абрисы отвода лесосек
+                </h3>
+                <h3 class="main_text">
+                    3. Копии проектов лесохозяйственных мероприятий за отчетный период<br>
+                    (материалы отвода с промерами и углами) с указанием времени проведения мероприятия
+                </h3>
+                <h3 class="main_text">
+                    4. При необходимости первичные лесоустраительные материалы по последнему лесоустройству<br>
+                    (сканированные лесоустраительные планшеты, квартальная сеть в векторном формате (при наличии) и т.д.)
+                </h3>
+                <h3 class="title">Для юридических лиц (в т.ч. Индивидуальных предпринимателей),<br>
+                    осуществляющих деятельность <span>по договорам купли-продажи</span> лесных насаждений:</h3>
+                <h3 class="main_text">
+                    1. Копия договора купли-продажи лесных насаждений<br>
+                    (страницы, где указано: покупатель лесного участка со всеми реквизитами;<br>
+                    местоположение лесного участка (лесничество, участковое лесничество, урочище, квартал, выдел),<br>
+                    площадь и объем заготовленной древесины)<br>
+                </h3>
+                <h3 class="main_text">
+                    2. Копию материала отвода лесного участка с промерами и углами (абрис отвода лесосеки)
+                </h3>
+                <h3 class="main_text">
+                    3. Копию проекта лесохозяйственных мероприятий (при наличии)
+                </h3>
+                <h3 class="main_text">
+                    4. При необходимости первичные лесоустраительные материалы по последнему лесоустройству<br>
+                    (сканированные лесоустраительные планшеты, квартальная сеть в векторном формате (при наличии) и т.д.)
+                </h3>
+                <h3 class="title">Для физических лиц, <span>осуществляющих заготовку древесины для собственных нужд:</span></h3>
+                <h3 class="main_text">
+                    1. Копия договора купли-продажи лесных насаждений<br>
+                    (страницы, где указано: покупатель лесного участка со всеми реквизитами;<br>
+                    местоположение лесного участка (лесничество, участковое лесничество, урочище, квартал, выдел),<br>
+                    площадь и объем заготовленной древесины)<br>
+                </h3>
+                <h3 class="main_text">
+                    2. Копию материала отвода лесного участка с промерами и углами
+                </h3>
+            </div>
+            <div class="block__button">
+                <button class="button">
+                    <svg class="button_svg">
+                        <rect class="button_rect">
+
+                        </rect>
+                    </svg>
+                    <!--<h3 class="button_text">заказать дистанционное зондирование</h3>-->
+                    заказать дистанционное зондирование
+                </button>
+            </div>
+        </div>
+        <div class="sixth_block">
+            <h2 class="block__title">Часто задаваемые вопросы:</h2>
+            <img src="{% static 'img/img6.png' %}" alt="">
+            <div class="questions">
+                <div class="question">
+                    <h3 class="question_title active_title">Как вы можете работать по всей России</h3>
+                    <h3 class="question_answer active">
+                        Вся наша работа может осуществляться дистанционно (удаленно).<br>
+                        Мы заключаем с Вами Договор на оказания информационных услуг,<br>
+                        далее Вы отправляете нам необходимые документы и дополнительные материалы (при необходимости),<br>
+                        оплачиваете 50% от стоимости работ.<br>
+                        Мы в течение 10-20 рабочих дней составляем альбом материалов ДЗ<br>
+                        (изображений участков использования и воспроизводства леса)<br>
+                        и направляем Вам (по электронной почте или любым другим удобным для Вас способом).
+                        Вы проверяете качество и количество выполненных работ и оплачиваете вторую половину стоимости.<br>
+                    </h3>
+                </div>
+            </div>
+            <div class="questions">
+                <div class="question">
+                    <h3 class="question_title">Нужны ли мне материалы ДЗ, прилагаемые к отчету об использовании лесов?</h3>
+                    <h3 class="question_answer">
+                        Нужны, если вы осуществили заготовку древесины или произвели лесохозяйственные мероприятия,<br>
+                        кроме лиц, осуществляющих заготовку древесины при использовании лесов в соответствии <span>со ст. 43-46 ЛК РФ (ст. 49, ст. 66 ЛК РФ)</span>
+                    </h3>
+                </div>
+            </div>
+            <div class="questions">
+                <div class="question">
+                    <h3 class="question_title">Могу ли я вам доверять</h3>
+                    <h3 class="question_answer">
+                        Мы более 15 лет работаем с ГИС технологиями в одном из самых богатейших лесными ресурсами регионе нашей страны – <span>Республики Карелия. </span><br>
+                        Мы успели наработать большой опыт со специализированным программным обеспечением<br>
+                        в сфере лесного хозяйства, в том числе с <span>обработкой данных дистанционного зондирования Земли.</span><br>
+                        Нашими партнерами являются крупнейшие лесозаготовительные организации Карелии.
+                    </h3>
+                </div>
+            </div>
+            <div class="questions">
+                <div class="question">
+                    <h3 class="question_title">Что входит в перечень оказываемых информационных услуг?</h3>
+                    <h3 class="question_answer">
+                        <ul>
+                            <li><span>Подборка оптического космического снимка на территорию обследования;</span></li>
+                            <li><span>Построение участка использования или воспроизводства леса по данным материала отвода;</span></li>
+                            <li><span>Совмещение космического снимка и материалов отвода;</span></li>
+                            <li><span>Формирование в формате JEPG снимка (графической части отчета) объемом до 10 Мб;</span></li>
+                        </ul>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="contacts">
+              {% for contact in contacts %}
+                <h3>{{ contact.phone }}</h3>
+                <h3>{{ contact.email }}</h3>
+              {% endfor %}
+            </div>
+            <div class="links">
+                <h3>Отказ от ответственности</h3>
+                <h3>Согласие с рассылкой</h3>
+                <h3>Политика конфиденциальности</h3>
+            </div>
+        </footer>
+        <form action="{% url 'contact' %}" method="POST" class="form" id="form" name="form">
+          {% csrf_token %}
+            <span>X</span>
+            <h3>Оставьте свои контактные данные<br> и наш менеджер свяжется с вами в ближайшее время</h3>
+            <input class="form_input" required placeholder="Имя" name="name" type="text" id="form_name"><br>
+            <input class="form_input" required placeholder="Телефон" name="phone" type="number" id="form_phone"><br>
+            <input class="from_input" type="e-mail" name="email" required placeholder="Электронная почта" id="form_email"><br>
+            <h3>Какой тип материалов ДЗ вам нужен:</h3>
+            <select required name="check_type" id="check_type" size="3">
+                <option value="1-ИЛ для арендаторов лесных участков">1-ИЛ для арендаторов лесных участков</option>
+                <option value="1-ВЛ для арендаторов лесных участков">1-ВЛ для арендаторов лесных участков</option>
+                <option value="1-ИЛ для граждан (заготовка древесины для собственных нужд)">1-ИЛ для граждан (заготовка древесины для собственных нужд)</option>
+            </select>
+            <div class="form_checkbox">
+                    <input type="checkbox" required>
+                    <h3>Я даю согласие на обработку персональных данных и получение предложений по смс и e-mail.<br>
+                            <a href="download/politika_confidencialnocti.pdf" download>Ссылка на политику конфиденциальности нашего сайта.</a></h3>
+            </div>
+            <button id="send_data" type="submit">Отправить</button>
+        </form>
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
