@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Contacts, il_1, vl_1, il_1_citizen,price_300,price_301,price_citizen,contact
+from .models import Contacts, il_1, vl_1, il_1_citizen,price_300,price_301,price_citizen,Contact
 
 class contactAdmin(admin.ModelAdmin):
     list_display = ('name','phone','email','dztype')
@@ -12,4 +12,4 @@ admin.site.register(il_1_citizen)
 admin.site.register(price_300)
 admin.site.register(price_301)
 admin.site.register(price_citizen)
-admin.site.register(contact, contactAdmin)
+admin.site.register(Contact, contactAdmin)

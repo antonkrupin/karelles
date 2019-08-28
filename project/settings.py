@@ -123,6 +123,10 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'project/static')
 ]
 
+#MEdia folder seetings
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 #Email DatasetConfig
 EMAIL_HOST = 'smtp.mail.ru'
 EMAIL_PORT = 2525

@@ -19,12 +19,14 @@ class Contacts(models.Model):
 #Для отчета 1-ИЛ
 class il_1(models.Model):
     about = models.CharField(max_length=400, verbose_name="Название отчета")
-    img = models.ImageField(upload_to='photos/%Y/%m/%d/', verbose_name="Фотография для 1-ИЛ для арендаторов лесных участков")
+    photo = models.ImageField(upload_to='photos/%Y/%m/%d/', default="", verbose_name="Фотография для 1-ИЛ для арендаторов лесных участков")
 
     class Meta:
         verbose_name="Материалы ДЗ к отчету 1-ИЛ"
         verbose_name_plural="Материалы ДЗ к отчету 1-ИЛ"
 
+    def __str__(self):
+        return self.about
 
 #Модель для смены изображения и названия
 #Для отчета 1-ВЛ
@@ -89,7 +91,7 @@ class price_citizen(models.Model):
 
 #Модель для сохранения контактов заявки
 #в базе арендованных
-class contact(models.Model):
+class Contact(models.Model):
     name = models.CharField(max_length=20, verbose_name="Имя")
     email = models.EmailField(max_length=254, verbose_name="Электронная почта", blank=True)
     phone = models.CharField(max_length=20, verbose_name="Телефон")
