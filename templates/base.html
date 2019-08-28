@@ -154,21 +154,31 @@
             </h3>
             <div class="fourth_block__img">
                 <div class="img">
-                    <img src="{% static 'img/examples/1.jpg' %}" alt="">
+                  {% for pht in phts %}
+                    <img src="{{ pht.first_photo.url }}">
+                  {% endfor %}
+                    <!--<img src="{{ 'il_1.photo.url' }}">-->
+                    <!--<img src="{% static 'img/examples/1.jpg' %}" alt="">-->
                     <h3>Материалы ДЗ<br>
                         к отчету 1-ИЛ<br>
                         для арендаторов лесных участков
                       </h3>
                 </div>
                 <div class="img">
-                    <img src="{% static 'img/examples/2.jpg' %}" alt="">
+                  {% for pht in phts %}
+                    <img src="{{ pht.second_photo.url }}">
+                  {% endfor %}
+                    <!--<img src="{% static 'img/examples/2.jpg' %}" alt="">-->
                     <h3>Материалы ДЗ<br>
                         к отчету 1-ВЛ<br>
                         для арендаторов лесных участков
                         </h3>
                 </div>
                 <div class="img">
-                    <img src="{% static 'img/examples/3.jpg' %}" alt="">
+                    {% for pht in phts %}
+                      <img src="{{ pht.third_photo.url }}">
+                    {% endfor %}
+                    <!--<img src="{% static 'img/examples/3.jpg' %}" alt="">-->
                     <h3>Материалы ДЗ<br>
                         к отчету 1-ИЛ для граждан<br>
                         (заготовка древесины<br>

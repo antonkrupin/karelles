@@ -103,3 +103,15 @@ class Contact(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+class Photos(models.Model):
+    first_photo = models.ImageField(upload_to='photos/%Y/%m/%d/', verbose_name="Материалы ДЗ к отчету 1-ИЛ для арендаторов лесных участков")
+    second_photo = models.ImageField(upload_to='photos/%Y/%m/%d/', verbose_name="Материалы ДЗ к отчету 1-ВЛ для арендаторов лесных участков")
+    third_photo = models.ImageField(upload_to='photos/%Y/%m/%d/', verbose_name="Материалы ДЗ к отчету 1-ИЛ для граждан (заготовка древесины для собственных нужд) ")
+
+    class Meta:
+        verbose_name="Примеры фотографий отчетов ДЗ"
+        verbose_name_plural="Примеры фотографий отчетов ДЗ"
+
+    def __str__(self):
+        return "Примеры материалов ДЗ"
