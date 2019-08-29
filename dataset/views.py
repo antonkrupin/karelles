@@ -2,29 +2,23 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.core.mail import send_mail
 
-from .models import Contacts, price_300,price_301,price_citizen,il_1,vl_1,il_1_citizen,Contact,Photos
+from .models import Contacts, price_300,price_301,price_citizen,Contact,Photos
 
 def index(request):
     contacts = Contacts.objects.all()
     prices_300 = price_300.objects.all()
     prices_301 = price_301.objects.all()
     prices_citizen = price_citizen.objects.all()
-    ils1 = il_1.objects.all()
     phts = Photos.objects.all()
-    #vls_1 = vl_1.objects.all()
-    #ils_1_citizen = il_1_citizen.objects.all()
 
     context = {
         'contacts': contacts,
         'prices_300': prices_300,
         'prices_301': prices_301,
         'prices_citizen': prices_citizen,
-        'ils1': il_1,
-        'vls_1': vl_1,
         'phts':phts,
-        #'ils_1_citizen': il_1_citizen,
     }
-    print(il_1.photo)
+    
     return render(request, 'base.html', context)
 
 def contact(request):

@@ -331,17 +331,17 @@
               {% endfor %}
             </div>
             <div class="links">
-                <h3>Отказ от ответственности</h3>
-                <h3>Согласие с рассылкой</h3>
-                <h3>Политика конфиденциальности</h3>
+                <a href="{% static 'download/otkaz_ot_otvetstvennosti.pdf' %}" target="_blank"><h3>Отказ от ответственности</h3></a>
+                <a href="{% static 'download/soglasie_s_rassulkoy.pdf' %}" target="_blank"><h3>Согласие с рассылкой</h3></a>
+                <a href="{% static 'download/politika_confidencialnocti.pdf' %}" target="_blank"><h3>Политика конфиденциальности</h3></a>
             </div>
         </footer>
         <form action="{% url 'contact' %}" method="POST" class="form" id="form" name="form">
           {% csrf_token %}
             <span>X</span>
             <h3>Оставьте свои контактные данные<br> и наш менеджер свяжется с вами в ближайшее время</h3>
-            <input class="form_input" required placeholder="Имя" name="name" type="text" id="form_name"><br>
-            <input class="form_input" required placeholder="Телефон" name="phone" type="number" id="form_phone"><br>
+            <input class="form_input" required placeholder="Имя, Отчество" name="name" type="text" id="form_name"><br>
+            <input class="form_input" required placeholder="Телефон в формате: 8-9xx-xxx-xxxx" name="phone" type="tel" id="form_phone" pattern="8-[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
             <input class="from_input" type="e-mail" name="email" required placeholder="Электронная почта" id="form_email"><br>
             <h3>Какой тип материалов ДЗ вам нужен:</h3>
             <select required name="check_type" id="check_type" size="3">
@@ -352,7 +352,7 @@
             <div class="form_checkbox">
                     <input type="checkbox" required>
                     <h3>Я даю согласие на обработку персональных данных и получение предложений по смс и e-mail.<br>
-                            <a href="download/politika_confidencialnocti.pdf" download>Ссылка на политику конфиденциальности нашего сайта.</a></h3>
+                            <a href="{% static 'download/politika_confidencialnocti.pdf' %}" download>Ссылка на политику конфиденциальности нашего сайта.</a></h3>
             </div>
             <button id="send_data" type="submit">Отправить</button>
         </form>
