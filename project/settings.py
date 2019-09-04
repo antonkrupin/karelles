@@ -130,7 +130,7 @@ MEDIA_URL = '/media/'
 #Email DatasetConfig
 EMAIL_HOST = 'smtp.mail.ru'
 EMAIL_PORT = 2525
-EMAIL_HOST_USER = 'krupin_anton@mail.ru'
-EMAIL_HOST_PASSWORD = '8f4N!j$opR#1'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS=True
 #587
