@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="Материалы ДЗ, 20 минут на участок, Работа по всей России, ст. 66 ЛК РФ «Отчет о воспроизводстве лесов и лесоразведении», ст. 49 ЛК РФ «Отчет об использовании лесов»">
+    <meta name="description" content="Материалы дистанционного зондирования. Участков использования и воспроизводства леса.">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
@@ -13,6 +16,13 @@
 </head>
 <body>
     <div class="main">
+        <div class="menu_wrapper">
+            <div class="menu">
+                <h3 class="menu_pricing">Стоимость</h3>
+                <h3 class="menu_whoneed">Кому необходимы</h3>
+                <h3 class="menu_examples">Примеры отчетов</h3>
+            </div>
+        </div>
         <div class="first_block">
             <img class="first_block__background" src="{% static 'img/fb_bg.png' %}" alt="">
             <div class="first_block__contacts">
@@ -63,7 +73,6 @@
 
                         </rect>
                     </svg>
-                    <!--<h3 class="button_text">заказать дистанционное зондирование</h3>-->
                     заказать дистанционное зондирование
                 </button>
             </div>
@@ -105,14 +114,14 @@
             <h2 class="block__title">Материалы дистанционного зондирования (материалы ДЗ)<br>
                     участков использования и воспроизводства лесов (лесосеки) нужны:</h2>
             <h3 class="main_text">
-                    — Юридическому или физическому лицу, осуществляющему использование лесов<br> и предоставляющему в соответствии со <span>ст. 49 ЛК РФ «Отчет об использовании лесов»</span>
+                    — Юридическому или физическому лицу, осуществляющему использование лесов<br> и предоставляющему в соответствии со <span><a href="http://www.consultant.ru/document/cons_doc_LAW_64299/08588035a08ced9b157c86d079ebf175e4374053/" target="_blank">ст. 49 ЛК РФ «Отчет об использовании лесов»</a></span>
             </h3>
             <h3 class="main_text">
-                    — Юридическому или физическому лицу, осуществляющему воспроизводство лесов<br> и лесоразведение, предоставляющему в соответствии со <br><span>ст. 66 ЛК РФ «Отчет о воспроизводстве лесов и лесоразведении»</span><br>
+                    — Юридическому или физическому лицу, осуществляющему воспроизводство лесов<br> и лесоразведение, предоставляющему в соответствии со <br><span><a href="http://www.consultant.ru/document/cons_doc_LAW_64299/7079a59beea231b6a7f030f93c7483c2da724566/" target="_blank">ст. 66 ЛК РФ «Отчет о воспроизводстве лесов и лесоразведении»</a></span><br>
             </h3>
             <h3 class="third_block__subtitle">Когда необходимо сдавать материалы ДЗ участков (лесосек)?:</h3>
             <h3 class="main_text">
-                    Обязательным приложением к отчетам 1-ИЛ, 1-ВЛ является графическая часть,<br>
+                    Обязательным приложением к отчетам <a href="http://www.consultant.ru/document/cons_doc_LAW_286062/" target="_blank">1-ИЛ</a>, <a href="http://www.consultant.ru/document/cons_doc_LAW_286576/" target="_blank">1-ВЛ</a> является графическая часть,<br>
                     которая может формироваться с применением космических снимков.<br>
                     Материалы дистанционного зондирования прилагаются однократно к годовым отчетам<br>
                     для определения местоположения и площади лесосеки при использовании лесов.<br>
@@ -127,7 +136,7 @@
                     <img src="{% static 'img/checkbox.png' %}" alt="">
                     <h3>Снимок участка использования или воспроизводства лесов (лесосеки)<br> в формате JPEG объемом до 10 Мб, который полностью<br>
                         соответствует требованиям действующего законодательства<br>
-                        (Приказ Минприроды РФ от 21.08.2017 №451 и №452)</h3>
+                        (Приказ Минприроды РФ от 21.08.2017 <a href="http://www.consultant.ru/document/cons_doc_LAW_286062/" target="_blank">№451</a> и <a href="http://www.consultant.ru/document/cons_doc_LAW_286576/" target="_blank">№452</a>)</h3>
                 </div>
                 <div class="bullet">
                     <img src="{% static 'img/checkbox.png' %}" alt="">
@@ -157,8 +166,6 @@
                   {% for pht in phts %}
                     <img src="{{ pht.first_photo.url }}">
                   {% endfor %}
-                    <!--<img src="{{ 'il_1.photo.url' }}">-->
-                    <!--<img src="{% static 'img/examples/1.jpg' %}" alt="">-->
                     <h3>Материалы ДЗ<br>
                         к отчету 1-ИЛ<br>
                         для арендаторов лесных участков
@@ -168,7 +175,6 @@
                   {% for pht in phts %}
                     <img src="{{ pht.second_photo.url }}">
                   {% endfor %}
-                    <!--<img src="{% static 'img/examples/2.jpg' %}" alt="">-->
                     <h3>Материалы ДЗ<br>
                         к отчету 1-ВЛ<br>
                         для арендаторов лесных участков
@@ -178,7 +184,6 @@
                     {% for pht in phts %}
                       <img src="{{ pht.third_photo.url }}">
                     {% endfor %}
-                    <!--<img src="{% static 'img/examples/3.jpg' %}" alt="">-->
                     <h3>Материалы ДЗ<br>
                         к отчету 1-ИЛ для граждан<br>
                         (заготовка древесины<br>
@@ -201,7 +206,6 @@
 
                         </rect>
                     </svg>
-                    <!--<h3 class="button_text">заказать дистанционное зондирование</h3>-->
                     заказать дистанционное зондирование
                 </button>
             </div>
@@ -266,7 +270,6 @@
 
                         </rect>
                     </svg>
-                    <!--<h3 class="button_text">заказать дистанционное зондирование</h3>-->
                     заказать дистанционное зондирование
                 </button>
             </div>
@@ -294,7 +297,7 @@
                     <h3 class="question_title">Нужны ли мне материалы ДЗ, прилагаемые к отчету об использовании лесов?</h3>
                     <h3 class="question_answer">
                         Нужны, если вы осуществили заготовку древесины или произвели лесохозяйственные мероприятия,<br>
-                        кроме лиц, осуществляющих заготовку древесины при использовании лесов в соответствии <span>со ст. 43-46 ЛК РФ (ст. 49, ст. 66 ЛК РФ)</span>
+                        кроме лиц, осуществляющих заготовку древесины при использовании лесов в соответствии <span>со ст. 43-46 ЛК РФ (<a href="http://www.consultant.ru/document/cons_doc_LAW_64299/08588035a08ced9b157c86d079ebf175e4374053/" target="_blank">ст. 49</a>, <a href="http://www.consultant.ru/document/cons_doc_LAW_64299/7079a59beea231b6a7f030f93c7483c2da724566/" target="_blank">ст. 66 ЛК РФ</a>)</span>
                     </h3>
                 </div>
             </div>
@@ -345,9 +348,8 @@
             <input class="from_input" type="e-mail" name="email" required placeholder="Электронная почта" id="form_email"><br>
             <h3>Какой тип материалов ДЗ вам нужен:</h3>
             <select required name="check_type" id="check_type" size="3">
-                <option value="1-ИЛ для арендаторов лесных участков">1-ИЛ для арендаторов лесных участков</option>
-                <option value="1-ВЛ для арендаторов лесных участков">1-ВЛ для арендаторов лесных участков</option>
-                <option value="1-ИЛ для граждан (заготовка древесины для собственных нужд)">1-ИЛ для граждан (заготовка древесины для собственных нужд)</option>
+                <option value="для арендаторов/лесопользователей">для арендаторов/лесопользователей</option>
+                <option value="для граждан">для граждан</option>
             </select>
             <div class="form_checkbox">
                     <input type="checkbox" required>
